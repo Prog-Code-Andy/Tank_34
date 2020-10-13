@@ -1,0 +1,189 @@
+#igra {
+	background: url(../img/pole.jpg);
+	margin: 0 auto;
+	width: 600px;
+	height: 400px;
+	position: relative;
+	overflow: hidden;
+}
+
+#tank {
+    display: block; /* делаем елемент в блоке */
+	position: absolute; /* позиционирование элементв по центру */
+	top: 355px; /* располочение танка */
+    left: 275px; /* располочение танка */
+}    
+/*едем вверх*/
+#image {	
+	position: absolute;/* позиционирование элементв по центру */
+    width: 30px; /* размер така */
+    height: 30px;  /* размер така */
+    background-image: url(../img/tank_top.png);
+    background-size: cover;/* замастить или растянуть  */
+	background-repeat: no-repeat; /* картинка не повторяется */
+	background-position: center;/* картинка будет центрироваться относительно места со всех краев */
+}
+/*едем вниз*/
+#image2 {	
+	position: absolute;/* позиционирование элементв по центру */
+    width: 30px; /* размер така */
+    height: 30px;  /* размер така */
+    background-image: url(../img/tank_bottom.png);
+    background-size: cover;/* замастить или растянуть  */
+	background-repeat: no-repeat; /* картинка не повторяется */
+	background-position: center;/* картинка будет центрироваться относительно места со всех краев */
+}
+/*едем влево*/
+#image3 {	
+	position: absolute;/* позиционирование элементв по центру */
+    width: 30px; /* размер така */
+    height: 30px;  /* размер така */
+    background-image: url(../img/tank_left.png);
+    background-size: cover;/* замастить или растянуть  */
+	background-repeat: no-repeat; /* картинка не повторяется */
+	background-position: center;/* картинка будет центрироваться относительно места со всех краев */
+}
+/*едем вправо*/
+#image4 {	
+	position: absolute;/* позиционирование элементв по центру */
+    width: 30px; /* размер така */
+    height: 30px;  /* размер така */
+    background-image: url(../img/tank_right.png);
+    background-size: cover;/* замастить или растянуть  */
+	background-repeat: no-repeat; /* картинка не повторяется */
+	background-position: center;/* картинка будет центрироваться относительно места со всех краев */
+}
+
+
+#start-block {
+	background: url(../img/glavnaia.jpg);
+	height: 100%; /* получает висоту и ширину от #game  */
+	background-size: cover;/* замастить или растянуть  */
+	background-position: center;/* картинка будет центрироваться относительно места со всех краев */
+	background-repeat: no-repeat; /* не повторять каартинку */
+}
+
+
+/* ***************************************
+кнопка старта игры
+*************************************** */
+#start-block button {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform:(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+#start-block button {
+	border: 3px solid #ffec07;
+    font-kerning: 30px;
+    color: #5e3ae6;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 150px;
+    height: 50px;
+    display: block;
+    text-align: center;
+    line-height: 60px;
+    font-family: Arial, sans-serif;
+    position: relative;
+    transition: .5s;
+    top: 151px;
+    left: 400px;
+    padding: 0;
+}
+#start-block button::before,
+#start-block button::after {
+position: absolute;
+content: '';
+width: 100%;
+height: 100%;
+background: #88a092;
+top: 0;
+left: -100%;
+opacity: .5;
+transition: .3s;
+z-index: -1;
+}
+#start-block button::after {
+opacity: 1;
+transition-delay: .2s;
+}
+#start-block button:hover {
+	color: #fff;
+}
+#start-block button:hover::before,
+#start-block button:hover::after {
+	left: 0;
+}
+
+.pulse {
+	width: 100px;
+	height: 100px;
+	background-color: aqua;
+	border-radius: 50%;
+	animation: pulse 0.7s ease-out;
+	transform: scale(0);
+	position: absolute;
+}
+@keyframes pulse {
+	to{
+		transform: scale(2);
+		background-color: #fff;
+		opacity: 0;
+	}
+}
+/* ***************************************
+кнопка старта игры
+*************************************** 
+/*позиция жизней*/
+#lifes {
+	position: absolute;
+	top: 6px;
+ right: 5px;
+}
+
+#lifes span {
+    width: 28px; /* размер така */
+    height: 28px;  /* размер така */
+	border-radius: 25%;
+	border: 1px solid #fff;
+	float: left; /* размещение по правому краюю */
+	padding: 1px; /* отступ внутрений катринтки от блока */
+	margin: 2px; /* отступвнешний друг от друга */
+	background-image: url(../img/lifes.png);
+	background-size: cover;/* замастить или растянуть  */
+	background-repeat: no-repeat; /* картинка не повторяется */
+	background-color: #ffec07;
+}
+
+#missile { /* Создаем контейнер для id missile как размер игрового поля и в него  */
+    height: 400px; /* забаем высоту картинке в блоке background */
+    width: 600px; /* задаем ширину картинке в блоке background*/
+    position: absolute; /* абролютное позиционирование объета по всему периметру*/
+}
+
+.missile { /* Создаем ракету */
+    background-image: url(../img/missile2.png);
+    height: 16px; /* размер ракеты */
+    width: 10px;  /* размер ракеты */
+    position: absolute;
+}
+
+#enemies { /* Создаем контейнер для id missile как размер игрового поля и в него  */
+    width: 600px;
+	height: 400px; /* задаем ширину картинке в блоке background*/
+    position: absolute; /* абролютное позиционирование объета по всему периметру*/
+}
+
+.enemy {
+    background-image: url(../img/enemy.png);
+    height: 50px; /* размер героя */
+    width: 50px;  /* размер героя */
+    position: absolute; /* абролютное позиционирование */
+    top: 70px; /* центрирование в нужной зоне объекта */
+    left: 120px; /* центрирование в нужной зоне объекта */
+}
